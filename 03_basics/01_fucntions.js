@@ -66,3 +66,57 @@ console.log(loginUserMessage());
 
 // hence aisi bkchodiyon se bachne ke liye we should use if conditions and all ki agar username nhi daala toh gaali dedo 
 
+function calculateCartPrice(...num1) {
+    return num1
+}
+
+console.log(calculateCartPrice(45, 200, 400));
+// ull get only the first one baki sb ko lega hi nhi woh 
+
+console.log(calculateCartPrice(45, 56, 70,4565465,45));
+// to avoid thiss we are gonna user ---> rest operator <---- that is ...
+// thats what gonna help alot 
+// it will put all the things into an arr so beautiful xD
+
+function calculateCartPrice_2(val1, val2, ...num1) {
+    return num1
+}
+
+console.log(calculateCartPrice_2(45,42,47,458));
+
+
+const user = {
+    username: "aryan",
+    price: 199
+}
+
+// how to pass this fking object into a fucntion
+
+function handleObject(anyObject) {
+    console.log(`Username is ${anyObject.username} and price is ${anyObject.price}`);
+}
+
+handleObject(user)
+
+// orr
+
+handleObject({
+    username: "linu",
+    price: "999",
+    age: 21
+})
+
+// how to pass arr in to a fucntion
+const myNewArray = [200, 3000, 6900, 500]
+
+function returnSecondValue(getArray){
+    return getArray[2]
+}
+
+console.log(returnSecondValue(myNewArray));
+// or
+
+// directly bhi arr ko pass kar skte ho 
+console.log(returnSecondValue([200, 400, 500]));
+
+
