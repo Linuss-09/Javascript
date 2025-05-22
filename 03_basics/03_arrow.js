@@ -30,7 +30,7 @@ const user =  {
 
 // chai()
 
-//arrow 
+// arrow 
 
 // const chai = function() {
 //     let username = "hitesh"
@@ -74,9 +74,12 @@ const add4 = (num1, num2) => ({username : "hitesh", age: 18})
 // jo this function will return object 
 // so object ko return karne ke liye use paranthesis me wrap karna hi padega 
 console.log(add4(2,3));
-console.log(addTwo(4,5));
 
 console.log(addThree(3,5));
 
 
 const myArray = [2,3,4,5,6]
+const hii = (str) => (`hii ${str}`)
+// its returning hii str 
+
+console.log(hii("yashu ji"));
