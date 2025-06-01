@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <!-- this is a cmomment ot see how the nodes behaves -->
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">thursday</div>
+    </div>
+</body>
+
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    // to find the no. of childresn mfk
+    console.log(parent.children); //gives html collections
+    // console.log(parent.children[1].innerHTML);
+
+    // how to get a htmlcollection??
+    // using parent.children
+    // // har ek element ka koi nah koi children hota hai
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     const element = parent.children[i].innerHTML;
+    //     console.log(element);   
+    // }
+
+    // lets do some fking styling 
+    parent.children[1].style.color = "purple"
+
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+
+    // how to move form chile to parent 
+    const dayOne = document.querySelector('.day')
+    // console.log(dayOne.innerHTML);
+    // // sidhar parent pr chle jao day 1 ka use karke
+    // console.log(dayOne.parentElement.innerHTML); //parent hai bhia yeh toh 
+    // console.log(dayOne.nextElementSibling);   //tuesday
+
+    console.log("NODE:- ", parent.childNodes);
+
+</script>
+
+</html>

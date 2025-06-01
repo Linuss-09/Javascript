@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>Javascirpt</li>
+    </ul>
+</body>
+
+<script>
+    // Method-1 bruteforce but its not optimized at all 
+    // lets make it optimised mfk
+    function addLanguage(langName) {
+        // creat li
+        const li =  document.createElement("li")
+        // Li ke ander inner html dal do 
+        li.innerHTML = `${langName}`
+        // attach thiis li child in language class
+        document.querySelector('.language').appendChild(li)
+    }
+
+ 
+    addLanguage("Typescirpt")
+    addLanguage("Java")
+    addLanguage("C++")
+    addLanguage("C")
+    addLanguage(' Python')
+
+
+    // method-2 optimized
+    function addOptiLanguage(langName) {
+        // 1. create list item 
+        const li =  document.createElement("li")
+
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+
+
+
+    addOptiLanguage("Ruby")
+    addOptiLanguage("Golang")
+
+    // Edit
+
+    // 1. select the secondLnag 
+    const secondLang = document.querySelector('li:nth-child(2)')
+    // secondLang.innerHTML = "mojo"
+
+    // create a new element 
+    const newLi = document.createElement('li')
+
+    // put the fkig content which you want to repalce mfk
+    newLi.textContent = "mojo"
+
+    // replace it nigga
+    secondLang.replaceWith(newLi)
+
+    // edit ;- replcace js with ts
+    // selectthe firstLang
+    const firstLang = document.querySelector("li:first-child")
+    // create a new element 
+    // firstLang.innerHTML = "typsescirpt"
+    // or
+    firstLang.outerHTML = '<li>Typescirpt</li>'
+
+
+    // remove the things
+    
+    // select the mfk lastLang first 
+    const lastLang = document.querySelector("li:last-child")
+    lastLang.remove()
+
+</script>
+</html>
