@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events</title>
+</head>
+<body style="background: #414141; color: aliceblue;">
+    <h2>amazing images</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+
+<script>
+    // js me events run hote hain woh sequentially hi run hote hain
+
+    // not really good approach
+/*     document.getElementById('owl').onclick = function () {
+        alert("owl here dont you dare to click on me")
+    } */
+   // attachEvent
+   // jQUery
+
+    // better apporahc using eventListener
+    
+    // 3rd aprameter is always false but default 
+
+    /* 
+    things to study in Events in js
+    */
+    // types, timestamp,defaultPrevented, 
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX ,screenY
+    // altkey, ctrlkey, shiftkey , keyCode
+
+//     document.getElementById('owl').addEventListener('click', function(e) {
+//         // console.log(e.timeStamp);
+//     })
+
+//     // event Propagation
+//     document.getElementById('images').addEventListener('click', function(e) {
+//         console.log('this nigga clicked ont the image UL tbh');
+//     }, false)
+
+//     document.getElementById('owl').addEventListener('click', function(e){
+//         console.log("this mfk clicked on the owl....such a loser ");
+//     }, false)
+
+//     // Q. owl ul ke andar hai hence jab owl pr click hoga mtlb ul pr bhi hua hai na bc so tell me which code will execute first?
+//     // ANS:- owl first ...img 2nd .....
+//     // this mfking concept is called bubbling up coz we ar fking going from inside to outisde
+
+//     // BUTTTTTT
+//     // there is soemthing else also.....its called -----------Event CAPTURING--------->
+//     // isme hum value to true kr dete hian like the default value ko fn me and that makes it OUTSIDE TO INSIDE PROCESS lMAOOOOOOOO......
+//     // toh pehle bahar se akrenge fir andar se karenge se lmaoooo...sus af.....
+
+//     // ----> just make thr 3rd param TRUE and its now folwing event capturing
+// /*
+  
+
+//     document.getElementById('images').addEventListener('click', function(e) {
+//         console.log('this nigga clicked ont the image UL tbh');
+//     }, true)
+
+//     document.getElementById('owl').addEventListener('click', function(e){
+//         console.log("this mfk clicked on the owl....such a loser ");
+//     }, true)   
+
+// */
+
+//     // but when we dont want these kinda propgation to take place so we just use a method called ---> 
+
+//     document.getElementById('japan').addEventListener('click', function(e) {
+//         console.log('bro clicked on japan img');
+//         e.stopPropagation();
+//         // will stop the event propagation
+//     }, false)
+
+//     document.getElementById('google').addEventListener('click', function(e){
+//         e.preventDefault();
+//         e.stopPropagation() //to stop bublling
+//         console.log("google clicked");
+//     })
+
+    // task :- click on the imgs and yeh sb gayab ho jaye
+
+    document.querySelector('#images')
+.addEventListener('click', function(e){
+    console.log(e.target.parentNode);
+    console.log(e.target.tagName);
+    // select the img tagName and remove that mfkin img
+    if(e.target.tagName === 'IMG'){
+
+    // how to remove 
+    // m-1
+    console.log(e.target.id);
+    let removeIt = e.target.parentNode //this is li
+    removeIt.remove()
+    }
+
+
+    // m2
+    // removeIt ka parentNode is Ul and uskoa chiild is removeIt and hence removed it lmaoooo
+    // removeIt.parentNode.removeChild(removeIt)
+}, false)
+
+
+</script>
+
+</html>

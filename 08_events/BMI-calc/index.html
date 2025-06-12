@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><BMI-CalC></BMI-CalC></title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'teal-green': '#48D1CC',
+                        'pale-mint': '#F0FFF0',
+                        'coral': '#FF7F50',
+                        'charcoal-gray': '#36454F',
+                    }
+                },
+                fontFamily: {
+                    sans: ['Poppins', 'sans-serif'],
+                    serif: ['Lora', 'serif']
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900  h-screen flex justify-center items-center">
+    <!-- Main card -->
+    <div class="m-6 rounded-md bg-green-900 w-full p-6 max-w-md">
+        <div class="bg-slate-100 border border-black mt-6 p-1 ">
+            <h2 class="ml-4 text-lg font-semibold tracking-wide text-center ">BMI Calculator</h2>
+        </div>
+        <h2 class="ml-4 mt-4 text-2xl text-violet-100 font-semibold tracking-wide">Calculate your Fking BMI</h2>
+
+        <div class="border rounded-xl bg-pale-mint h-48 ml-4 mt-4"></div>
+    </div>
+</body>
+</html>

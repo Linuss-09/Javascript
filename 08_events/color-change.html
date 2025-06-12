@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-50 flex justify-center items-center flex-col h-screen">
+    <h2 class="text-white text-3xl mb-2">Just click on Start and suffer!!!!....hell yah mfk</h2>
+    <div class="flex justify-around items-center gap-x-8">
+    <button class="rounded-md m-6 px-5 py-1 text-lg bg-emerald-800" id="start">Start the fkin Show</button>
+    <button class="rounded-md px-5 py-1 text-lg bg-red-800" id="stop">Stop it!! my eyes O.O</button>        
+    </div>
+
+</body>
+
+<script>
+    const randomColor = function() {
+        const hex = "01234567989ABCDEF"
+        // hex is a fkin string hence we are gonna use it just like she did
+        let color = '#'
+        for(let i = 0; i<6; i++) {
+            color += hex[Math.floor(Math.random() * 16)]
+        }
+        return color;
+    }
+
+
+    const setRandomColor = function() {
+        document.body.style.backgroundColor = randomColor()
+    }
+
+    let interval;
+    document.querySelector('#start').addEventListener('click', function() {
+        // pass the ref only dont you dare to execute it here mfk
+        console.log(interval);
+        if(!interval){
+            interval = setInterval(setRandomColor, 625)
+        }
+    })
+
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(interval)
+        interval = null
+
+    })
+
+    // console.log(randomColor());
+
+
+</script>
+</html>

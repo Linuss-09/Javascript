@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-700 text-white flex justify-center items-center h-screen flex-col" >
+    <h1 class="text-center items-center text-5xl  bg-blue-700 px-6 py-3 rounded-lg border-black border ">Click on the button</h1>
+
+    <button id="start" class="mt-8 bg-red-900 px-6 py-1 rounded-lg border-black border ">Say sorry</button>
+
+
+    <button id="stop" class="border border-black m-8 px-4 py-2 rounded-lg bg-emerald-800">It's ohkay stop now</button>
+</body>
+
+<script>
+    // setInterval :==> it will continurly execute the fkin funciton after certain interval
+
+    // -> tip always make a ref of ahdnler funtion coz it will relaly be easier for you to mange and use things then 
+
+    const sayDate = function(str){
+        console.log(str, Date.now());
+    }
+    // there can be a third param as well in setInterval
+    const intervalId = setInterval(sayDate, 1000,"hii")
+
+
+    // now to stop this mfk you can use ----> clearInterval() <-------  fn and usme ref. mangega woh toh setInterval ka ref leke baitha karo mc.
+
+    clearInterval(intervalId);
+
+
+    // taska -1 START
+    let startInterval;
+    document.querySelector('#start').addEventListener('click', function(){
+        // create a ref for handler for setInterval first 
+        const say_the_Date = function(str){
+            console.log(str, Date.now());
+        }
+
+        // write setInterval with ref
+        startInterval = setInterval(say_the_Date, 1000, "i am sorry babu(ft. arnab)")
+    })
+    
+
+
+    // task -2 STOP
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearInterval(startInterval);
+        console.log("interval stoppped only coz of you mfk");
+    })
+
+
+
+</script>
+</html>

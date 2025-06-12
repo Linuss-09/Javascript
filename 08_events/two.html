@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body style="background-color: #212121; color: aliceblue;">
+    <h1>chai aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+
+<script>
+    // fn1 speaical provided by browser
+    // setTiemout()  :- basically aap itni der ka time do and main execute ho jaunga after certain time mfk
+    // handler is a special fun which dowsnt have any name....so bename is handler kindaa
+
+    const sayHi = function(){
+        console.log("hiiii");
+    }
+
+    // change the name of this h1 fn
+    const changeText = function() {
+        document.querySelector('h1').innerHTML = "hiii mfk"
+    }
+
+
+
+    // how to stop this time out thing 
+    // the ans is clearTimeout() but bc isko chahiye ref..of that specific setTimeout() jisko humne rokna hai so smjho is baat ko
+
+    // tking gthe ref of setTImeout
+    const changeMe = setTimeout(changeText, 2000) 
+
+    // putting a clearTImeout on a clik event
+    document.querySelector('#stop').addEventListener('click', function() {
+        clearTimeout(changeMe);
+        console.log('clearTimeout executed');
+    })
+
+    // give the fkin referecne here
+    setTimeout(sayHi,2000)
+</script>
+</html>
