@@ -1,0 +1,61 @@
+{
+    "videos" : [
+        {
+            "id": 1,
+            "name": "Rainy Night Window",
+            "file": "videos/lofi-animation-1.mp4"
+        },
+        {
+            "id": 2,
+            "name": "Craze Study Room",
+            "file":"videos/lofi-animation-2.mp4"
+        },
+        {
+            "id": 3,
+            "name": "Craze Study Room",
+            "file":"videos/video-3.mp4"
+        },
+        {
+            "id": 4,
+            "name": "Craze Study Room",
+            "file":"videos/video-4.mp4"
+        },
+        {
+            "id": 5,
+            "name": "Craze Study Room",
+            "file":"videos/video-5.mp4"
+        }
+    ],
+    "songs": [
+        {
+            "id": 1,
+            "title": "Study-Beat",
+            "artist": "Artist_1",
+            "file": "music/lofi-beat-1.mp3"
+        },
+        {
+            "id": 2,
+            "title": "Coffee-Beat",
+            "artist": "Artist_2",
+            "file":"music/lofi-beat-2-coffee.mp3"
+        },
+        {
+            "id": 3,
+            "title": "Chill-beat",
+            "artist": "Artist_3",
+            "file":"music/lofi-beat-3.mp3"
+        },
+        {
+            "id": 4,
+            "title": "Starry-Night",
+            "artist": "Artist_4",
+            "file":"music/lofi-beat-4.mp3"
+        },
+        {
+            "id": 5,
+            "title": "Jazz-lofi-beat",
+            "artist": "Artist_5",
+            "file":"music/lofi-jazz-chill-5.mp3"
+        }
+    ]
+}

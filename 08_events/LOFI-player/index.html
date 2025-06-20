@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lofi-player</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    // ... your colors are fine ...
+                }
+            },
+            fontFamily: {
+                sans: ['Poppins', 'sans-serif'],
+                serif: ['Lora', 'serif'],
+                lato: ['Lato', 'sans-serif'],
+                // --- ADD THIS LINE ---
+                cascadia: ['Cascadia Mono', 'monospace'] 
+            }
+        }
+    }
+</script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Lato:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-gray-900">
+    <audio src="music/lofi-beat-1.mp3"
+    class="" id="lofi-audio"></audio>
+    <video autoplay loop muted id="video"
+    class="absolute top-0 left-0 w-full h-full object-cover -z-10"
+    src="videos/lofi-animation-1.mp4 "></video> 
+    <!-- main container -->
+    <main class="relative w-full h-screen flex justify-center items-center">
+        <!-- glass control bar -->
+        <div class="flex flex-col justify-center items-center gap-2 bg-black/30 backdrop-blur-md px-8 py-6 rounded-lg 
+        shadow-sm shadow-gray-800 ">
+ 
+
+            <!-- btn div -->
+            <div class="border- flex justify-center items-center px-8 py-1 gap-4  w-full rounded-lg ">
+           <!-- backward btn -->
+            <button
+            id="back-btn" class=" p-3 rounded-full hover:bg-white/20 transition-colors ">
+                <svg 
+                
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
+
+                class="size-12 text-white">
+
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 16.811c0 .864-.933 1.406-1.683.977l-7.108-4.061a1.125 1.125 0 0 1 0-1.954l7.108-4.061A1.125 1.125 0 0 1 21 8.689v8.122ZM11.25 16.811c0 .864-.933 1.406-1.683.977l-7.108-4.061a1.125 1.125 0 0 1 0-1.954l7.108-4.061a1.125 1.125 0 0 1 1.683.977v8.122Z" />
+                </svg>
+            </button>
+
+            <!-- PLAY buttonn -->
+            <button 
+            id="play-buttonn" class="  p-3 rounded-full hover:bg-white/20 transition-colors ">
+                <svg 
+                xmlns="http://www.w3.org/2000/svg"
+                id="svg-play-btn" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 0 1 0 .656l-5.603 3.113a.375.375 0 0 1-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112Z" />
+                </svg>
+
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                id="svg-pause-btn" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-12 text-white hidden">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5V18M15 7.5V18M3 16.811V8.69c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811Z" />
+            </svg>
+            </button>
+
+
+            <!-- forward buttonn -->
+            <button
+            id="next-btn" class=" p-3 rounded-full hover:bg-white/20 transition-colors ">
+                <svg 
+                
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
+                
+                class="size-12 text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811V8.69ZM12.75 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061a1.125 1.125 0 0 1-1.683-.977V8.69Z" />
+</svg>
+
+            </button>        
+
+        </div>
+            
+            <!-- vol div -->
+            <div class="flex justify-center items-center w-full gap-2">
+                <!-- VOL icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
+                id="vol-icon" class="size-8 text-white cursor-pointer">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                </svg>
+
+                <!-- MUTE icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                id="mute-vol-icon" class="size-8 text-white hidden cursor-pointer">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75 19.5 12m0 0 2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25m-10.5-6 4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z" />
+                </svg>
+
+
+                <!-- vol SLIDER -->
+                <input 
+                type="range"
+                class="w-48 h-1 accent-white cursor-pointer"
+                id="vol-slider"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"           
+                >
+
+            </div>
+            
+        </div>
+
+
+        <div id="song-info"
+        class="absolute text-white bottom-5 rounded-md px-10 py-3 bg-black/30 backdrop-blur-md flex flex-col justify-center items-center gap-2 text-lg font-cascadia">
+            <h2 class="" id="song-title">Song-title</h2>
+            <p class="text-center" id="song-artist">Artist</p>
+        </div>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
